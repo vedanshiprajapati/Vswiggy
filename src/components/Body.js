@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import RestoCard from "./Restocard";
+import RestoCard, { RestoCardOpen } from "./Restocard";
 import Shimmer from "./Shimmer";
 import PurplePoster from "./PurplePoster";
 import { Link } from "react-router-dom";
@@ -8,7 +8,7 @@ import ClassBasedComponent from "./ ClassBasedComponent";
 const Body = () => {
   const [ResList, setResList] = useState(null);
   const [Title, setTitle] = useState("restaurants");
-
+  const ClosedRestaurants = RestoCardOpen(RestoCard);
   useEffect(() => {
     fetchDATA();
   }, []);
@@ -104,7 +104,11 @@ const Body = () => {
                 key={resdata?.info?.id}
                 to={`/restaurants/${resdata?.info?.id}`}
               >
-                <RestoCard resData={resdata} />
+                {resdata?.info.isOpen ? (
+                  <RestoCard resData={resdata} />
+                ) : (
+                  <ClosedRestaurants resData={resdata} />
+                )}
               </Link>
             ))}
           </div>

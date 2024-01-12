@@ -24,4 +24,14 @@ const RestoCard = (props) => {
   );
 };
 
+export const RestoCardOpen = (RestoCard) => {
+  return (props) => {
+    return (
+      <div>
+        <label className="closed-label">Closed</label>
+        <RestoCard {...props} />
+      </div>
+    );
+  };
+};
 export default RestoCard;
