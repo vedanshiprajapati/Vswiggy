@@ -3,7 +3,6 @@ import RestoCard, { RestoCardOpen } from "./Restocard";
 import Shimmer from "./Shimmer";
 import PurplePoster from "./PurplePoster";
 import { Link } from "react-router-dom";
-import ClassBasedComponent from "./ ClassBasedComponent";
 
 const Body = () => {
   const [ResList, setResList] = useState(null);

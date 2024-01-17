@@ -1,4 +1,4 @@
-import Menucard from "../components/Menucard";
+import SubCategories from "../components/SubCategories";
 
 // export function updateStateVariables(data) {
 //   for (let i = 0; i < data?.data?.cards?.length; i++) {
@@ -18,9 +18,7 @@ export function checkSubCategories(category) {
   if (category.categories != undefined) {
     return category.categories.map((i) => checkSubCategories(i));
   } else if (category.categories === undefined) {
-    return category?.itemCards.map((item) => (
-      <Menucard key={item?.card?.info?.id} props={item} />
-    ));
+    return <SubCategories category={category} />;
   }
 }
 

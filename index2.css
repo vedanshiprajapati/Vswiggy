@@ -21,7 +21,12 @@ a {
     width: 50px;
     height: 50px;
     margin: auto 0;
+    transition: transform ease-in 0.1s ;
 }
+.svgimg:hover{
+    transform:scale(1.07)
+}
+
 .inpute{
     height: 30px;
     margin: auto 0 auto 20px;
@@ -44,14 +49,12 @@ a {
     margin: auto;
     display: flex;
     justify-content: space-evenly;
-
 }
 .NavBar > ul > li > a{
     cursor: pointer;
 }
 .navbar-logos {
-    margin-right: 5px;
-
+    margin-right: 5px;  
 }
 .purple-gradient {
     background: linear-gradient(0deg, rgba(206,194,245,1) 0%, rgba(255,255,255,1) 100%);
@@ -231,10 +234,14 @@ a {
 .font {
     font-family: 'Quicksand', sans-serif;
     font-size:14px;
+} 
+.menu-shimmer{
+   margin: 100px auto 20px;
+   justify-content: center;
 }
 .menu-header {
     height: auto;
-    width: 90vh;
+    width: 50%;
     margin: 100px auto 20px;
 }
 .menu-rating {
@@ -261,19 +268,20 @@ a {
     color: #7E808C;
 }
 .menu-card {
-    width: 90vh;
+    width: 50%;
     margin: auto;
     padding: 10px 0 20px 0;
     border-bottom: solid #D3D3D3 1px;
 }
 .category-title {
-   width: 90vh;
+    width: 50%;
     margin: auto;
-    font-weight: bolder;
+    font-weight: bold;
     font-size: 12px;
-    border: #D3D3D3 solid 1px;
-    background: #D3D3D3;
+    border-bottom: solid 1px #d3d3d3;
+    /* background: #D3D3D3; */
     padding: 10px 0;
+    cursor: pointer;
 }
 .category-arrow {
     font-size:14px;

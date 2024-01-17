@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Shimmer from "./Shimmer";
 import { useParams } from "react-router-dom";
 import {
@@ -6,9 +5,9 @@ import {
   ActualMenuArrayFromData,
 } from "../utils/someFunctions";
 import useRestoFetch from "../utils/useRestoFetch";
+import MenuCategory from "./MenuCategory";
 
 const ResMenu = () => {
-  const [categoryOpenBtn, setCatgoryOpenBtn] = useState({ display: "block" });
   const { resId } = useParams();
   const [menuList, menuTitleInfo] = useRestoFetch(resId);
 
@@ -16,7 +15,7 @@ const ResMenu = () => {
 
   if (menuTitleInfo === null && menuList === null) {
     return (
-      <div className="w-100vh">
+      <div className="w-100vh flex-row menu-shimmer">
         <Shimmer />
       </div>
     );
@@ -46,19 +45,21 @@ const ResMenu = () => {
             </span>
           </div>
         </div>
-        <div>
-          <div className="menu">
-            {MenuListSliced.map((category) => (
+        <div className="menu">
+          {/* {MenuListSliced.map((category) => (
               <div>
                 <div className="category-title font flex-row space-between">
                   <h1>{category?.card?.card?.title}</h1>
                   <div className="category-arrow">↓</div>
                 </div>
-                {/* {console.log(category?.card?.card)} */}
+                {console.log(category?.card?.card)}
                 <div>{checkSubCategories(category?.card?.card)}</div>
               </div>
             ))}
-          </div>
+           */}
+          {MenuListSliced.map((category) => (
+            <MenuCategory category={category} />
+          ))}
         </div>
       </div>
     );

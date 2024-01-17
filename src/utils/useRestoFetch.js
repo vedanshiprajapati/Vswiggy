@@ -5,7 +5,7 @@ const useRestoFetch = (resId) => {
   const [menuTitleInfo, setMenuTitleInfo] = useState(null);
   useEffect(() => {
     fetchData();
-  });
+  }, []);
   async function fetchData() {
     console.log("inside fetch function");
     const p = await fetch(
