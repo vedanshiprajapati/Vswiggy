@@ -273,6 +273,9 @@ a {
     padding: 10px 0 20px 0;
     border-bottom: solid #D3D3D3 1px;
 }
+.category-padding {
+    padding: 10px;
+}
 .category-title {
     width: 50%;
     margin: auto;
@@ -300,3 +303,4 @@ a {
     padding: 3px 7px;
     font-family: 'Montserrat', sans-serif;
 }
+

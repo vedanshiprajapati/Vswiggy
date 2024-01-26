@@ -6,11 +6,12 @@ import {
 } from "../utils/someFunctions";
 import useRestoFetch from "../utils/useRestoFetch";
 import MenuCategory from "./MenuCategory";
+import { useState } from "react";
 
 const ResMenu = () => {
   const { resId } = useParams();
   const [menuList, menuTitleInfo] = useRestoFetch(resId);
-
+  const [accordian, setAccordian] = useState(null);
   console.log(menuList, "menuu data");
 
   if (menuTitleInfo === null && menuList === null) {
@@ -26,7 +27,6 @@ const ResMenu = () => {
         <div className="menu-header">
           <div className="flex-row space-between">
             <div className="menu-title">
-              {console.log("i am in the card ")}
               <h2>{menuTitleInfo.info.name}</h2>
               <p className="fcolor">{menuTitleInfo.info.cuisines.join(", ")}</p>
             </div>
@@ -45,7 +45,7 @@ const ResMenu = () => {
             </span>
           </div>
         </div>
-        <div className="menu">
+        <div className="menu border">
           {/* {MenuListSliced.map((category) => (
               <div>
                 <div className="category-title font flex-row space-between">
@@ -57,8 +57,16 @@ const ResMenu = () => {
               </div>
             ))}
            */}
-          {MenuListSliced.map((category) => (
-            <MenuCategory category={category} />
+          {MenuListSliced.map((category, index) => (
+            <MenuCategory
+              key={category?.card?.card?.title}
+              category={category}
+              accordian={index === accordian ? true : false}
+              setAccordian={() => {
+                setAccordian(index);
+              }}
+              index={index}
+            />
           ))}
         </div>
       </div>

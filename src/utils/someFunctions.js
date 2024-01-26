@@ -18,7 +18,7 @@ export function checkSubCategories(category) {
   if (category.categories != undefined) {
     return category.categories.map((i) => checkSubCategories(i));
   } else if (category.categories === undefined) {
-    return <SubCategories category={category} />;
+    return <SubCategories key={category?.title} category={category} />;
   }
 }
 

@@ -7,12 +7,17 @@ import Offers from "./components/Offers";
 import Error from "./components/Error";
 import Help from "./components/Help";
 import ResMenu from "./components/ResMenu";
+import { Provider } from "react-redux";
+import appStore from "./utils/appStore";
+
 const Applayout = () => {
   return (
-    <div>
-      <Header />
-      <Outlet />
-    </div>
+    <Provider store={appStore}>
+      <div>
+        <Header />
+        <Outlet />
+      </div>
+    </Provider>
   );
 };
 

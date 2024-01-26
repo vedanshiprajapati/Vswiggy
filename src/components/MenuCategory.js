@@ -1,24 +1,28 @@
 import { checkSubCategories } from "../utils/someFunctions";
 import { useState } from "react";
 
-const MenuCategory = (category) => {
-  const [accordian, setAccordian] = useState(true);
+const MenuCategory = ({ category, accordian, setAccordian }) => {
+  const [closing, setClosing] = useState(false);
+
   function handleClick() {
-    setAccordian(!accordian);
+    setAccordian();
+    closing ? setClosing(false) : setClosing(true);
   }
+
   return (
-    <div>
+    <div className="category-padding">
       <div
-        className="category-title font flex-row space-between"
+        className="category-title font flex-row space-between border"
         onClick={handleClick}
       >
-        <h1>{category?.category?.card?.card?.title}</h1>
-        {!category?.category?.card?.card?.categories && (
+        <h1>{category?.card?.card?.title}</h1>
+        {/* {!category?.card?.card?.categories && (
           <div className="category-arrow">↓</div>
-        )}
+        )} */}
+        <div className="category-arrow">↓</div>
       </div>
       <div>
-        {accordian && checkSubCategories(category?.category?.card?.card)}
+        {closing && accordian && checkSubCategories(category?.card?.card)}
       </div>
     </div>
   );

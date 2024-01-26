@@ -1,4 +1,4 @@
-import CategoryList from "./CategoryList";
+import MenucardList from "./MenuCardList";
 import { useState } from "react";
 const SubCategories = ({ category }) => {
   const [accordian, setAccordian] = useState(true);
@@ -14,7 +14,7 @@ const SubCategories = ({ category }) => {
         <h1>{category?.title}</h1>
         <div className="category-arrow">↓</div>
       </div>
-      <div>{accordian && <CategoryList props={category?.itemCards} />}</div>
+      <div>{accordian && <MenucardList props={category?.itemCards} />}</div>
     </div>
   );
 };
