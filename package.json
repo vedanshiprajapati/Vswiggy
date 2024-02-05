@@ -4,7 +4,7 @@
   "description": "a food ordering app",
   "scripts": {
     "start": "parcel index.html --port 9080",
-    "build": "parcel build index.html --port 9080",
+    "build": "parcel build index.html",
     "test": "jest"
   },
   "repository": {

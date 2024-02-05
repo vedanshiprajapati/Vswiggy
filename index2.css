@@ -8,6 +8,10 @@ a {
     text-decoration: none;
     color: black;
 }
+button {
+    background-color: white;
+    border: none;
+}
 .header{
     width: 100%;
     height: 10vh;
@@ -26,7 +30,24 @@ a {
 .svgimg:hover{
     transform:scale(1.07)
 }
+.cart-0 {
+    position: absolute;
+    /* top: 50%;
+    left: 50%; */
+    /* -ms-transform: translate(-50%,-50%); */
+    /* transform: translate(-50%,-50%); */
+    font-size: 14px;
+    font-weight: 600;
+    
+}
+.center {
+    justify-content: center;
+    align-items: center;
+}
 
+.border {
+    border: #333 solid 1px;
+}
 .inpute{
     height: 30px;
     margin: auto 0 auto 20px;
@@ -55,6 +76,9 @@ a {
 }
 .navbar-logos {
     margin-right: 5px;  
+}
+.cursor:hover{
+ cursor: pointer;
 }
 .purple-gradient {
     background: linear-gradient(0deg, rgba(206,194,245,1) 0%, rgba(255,255,255,1) 100%);
@@ -270,9 +294,45 @@ a {
 .menu-card {
     width: 50%;
     margin: auto;
-    padding: 10px 0 20px 0;
+    padding: 30px 0 20px 10px;
     border-bottom: solid #D3D3D3 1px;
+    gap: 30px;
 }
+.menucard-leftpart p {
+    color: #9EA0A9;
+}
+.menucard-leftpart>h5{
+    margin-top: 5px;
+    /* border: #333 solid; */
+}
+.menucard-image {
+    height: 96px;
+    width: 118px;
+    border-radius: 5px;
+}
+.add-btn {
+    position: absolute;
+    height: 36px;
+    width: 96px;
+    z-index: 1;
+    margin-top: -30px;
+    margin-left: 11px;
+    color: #60b246;
+    border: 1px solid #d4d5d9;
+    background-color: #fff;
+    font-size: .8rem;
+    font-weight: 400;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 4px;
+    box-shadow: 0 3px 8px #e9e9eb;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+}
+.add-btn:hover {
+    box-shadow: 0 3px 8px #c5c5c6;
+}
+
 .category-padding {
     padding: 10px;
 }
@@ -283,7 +343,7 @@ a {
     font-size: 12px;
     border-bottom: solid 1px #d3d3d3;
     /* background: #D3D3D3; */
-    padding: 10px 0;
+    padding: 10px;
     cursor: pointer;
 }
 .category-arrow {
@@ -303,4 +363,53 @@ a {
     padding: 3px 7px;
     font-family: 'Montserrat', sans-serif;
 }
+.cart {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
 
+.empty-cart {
+    height: 90vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Quicksand', sans-serif;
+}
+.empty-cart > h3 {
+    margin-top: 24px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #535665;
+}
+.empty-cart > p {
+    margin-top: 8px;
+    color: #7e808c;
+    margin-bottom: 30px;
+}
+
+.pan-cooking-image{
+    width: 271px;
+    height: 256px;
+    background-image: url(https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/2xempty_cart_yfxml0);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0 auto;
+}
+.cart-title {
+}
+.cart-card {
+    width: 40%;
+    margin: 10px;
+    padding: 30px 20px;
+    border: solid black;
+    font-family:'Quicksand', sans-serif;
+}
+.clear-btn {
+    margin-left: 370px;
+}

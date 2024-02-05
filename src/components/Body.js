@@ -8,6 +8,7 @@ const Body = () => {
   const [ResList, setResList] = useState(null);
   const [Title, setTitle] = useState("restaurants");
   const ClosedRestaurants = RestoCardOpen(RestoCard);
+
   useEffect(() => {
     fetchDATA();
   }, []);

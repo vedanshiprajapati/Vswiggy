@@ -45,7 +45,7 @@ const ResMenu = () => {
             </span>
           </div>
         </div>
-        <div className="menu border">
+        <div className="menu">
           {/* {MenuListSliced.map((category) => (
               <div>
                 <div className="category-title font flex-row space-between">
