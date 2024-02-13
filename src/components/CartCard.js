@@ -15,7 +15,7 @@ const CartCard = ({ props }) => {
     <div className="cart-card">
       <div className="font flex-row space-between">
         <h3>{name}</h3>
-        <h5 className="fcolor">₹ {p}</h5>
+        <h5 className="fcolor">₹ {p / 100}</h5>
         <br />
         <button className="cursor" onClick={handleClick}>
           X
