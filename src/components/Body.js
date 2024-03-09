@@ -44,18 +44,21 @@ const Body = () => {
     return (
       <div>
         <PurplePoster />
-        <div className="main">
-          <div className="flex-row space-between">
+        <div className="mx-[150px] my-[20px]">
+          <div className="flex flex-row justify-between">
             <div>
-              <h1>Restaurants with online food delivery in Ahmedabad</h1>
+              <h1 className="text-3xl font-semibold">
+                Restaurants with online food delivery in Ahmedabad
+              </h1>
               <br />
             </div>
             <div>
-              <button className="filter">Filter</button>
+              <button className="bg-[white] border-black border px-[15px] py-[7px] rounded-[20px] [transition:ease-in-out] mr-[50px] focus:[box-shadow:0px_0px_7px_3px_rgb(234,_232,_232)] hover:[box-shadow:0px_0px_7px_3px_rgb(234,_232,_232)]">
+                Filter
+              </button>
             </div>
           </div>
-          <div className="flex-row wrap">
-            <div className="shimmer-card"></div>
+          <div className="flex flex-row flex-wrap">
             <Shimmer />
             <Shimmer />
             <Shimmer />
@@ -73,11 +76,10 @@ const Body = () => {
     return (
       <div>
         <PurplePoster />
-        <div className="main">
-          <div className="flex-row space-between">
-            <div>
+        <div className="mx-[150px] my-[20px]">
+          <div className="flex flex-row justify-between">
+            <div className="text-3xl font-semibold">
               <h1>Restaurants with online food delivery in Ahmedabad</h1>
-              <br />
             </div>
             <div>
               <button
@@ -92,13 +94,13 @@ const Body = () => {
                   //  console.log(filtered)
                   setResList(filtered);
                 }}
-                className="filter"
+                className="bg-[white] border-black border px-[15px] py-[7px] rounded-[20px] [transition:ease-in-out] mr-[50px] focus:[box-shadow:0px_0px_7px_3px_rgb(234,_232,_232)] hover:[box-shadow:0px_0px_7px_3px_rgb(234,_232,_232)]"
               >
                 Filter
               </button>
             </div>
           </div>
-          <div className="flex-row wrap">
+          <div className="flex flex-row flex-wrap">
             {ResList.map((resdata) => (
               <Link
                 key={resdata?.info?.id}

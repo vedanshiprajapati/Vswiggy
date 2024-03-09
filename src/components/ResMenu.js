@@ -16,47 +16,35 @@ const ResMenu = () => {
 
   if (menuTitleInfo === null && menuList === null) {
     return (
-      <div className="w-100vh flex-row menu-shimmer">
+      <div className="w-full flex flex-row mt-[100px] mx-auto mb-[20px] justify-center">
         <Shimmer />
       </div>
     );
   } else {
     let MenuListSliced = ActualMenuArrayFromData(menuList);
     return (
-      <div className="w-100vh">
-        <div className="menu-header">
-          <div className="flex-row space-between">
+      <div className="w-full">
+        <div className="h-auto w-1/2 mt-[100px] mx-[auto] mb-[20px]">
+          <div className="flex flex-row justify-between font-['Quicksand',_sans-serif] text-[14px]">
             <div className="menu-title">
-              <h2>{menuTitleInfo.info.name}</h2>
-              <p className="fcolor">{menuTitleInfo.info.cuisines.join(", ")}</p>
+              <h2 className="font-bold pb-[10px]">{menuTitleInfo.info.name}</h2>
+              <p className="text-[#7E808C]">
+                {menuTitleInfo.info.cuisines.join(", ")}
+              </p>
             </div>
-            <div className="menu-rating rating-color">
+            <div className="h-fit p-[10px] font-bold text-[#3E9B6D]">
               ★ {menuTitleInfo.info.avgRating}
             </div>
           </div>
-          <div className="fcolor">
+          <div className="text-[#7E808C] font-['Quicksand',_sans-serif] text-[14px]">
             <p>{menuTitleInfo.info.areaName}▾</p>
           </div>
-          <div className="menu-delivary">
+          <div className="flex items-center px-[0] py-[15px] text-[#7E808C] border-b-[dashed_1px_#D3D3D3] gap-[5px] font-['Quicksand',_sans-serif] text-[14px]">
             <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_18,h_18/v1648635511/Delivery_fee_new_cjxumu" />
-            <span className="bg-slate-700">
-              {" "}
-              1.7 kms | ₹35 Delivery fee will apply
-            </span>
+            <span> 1.7 kms | ₹35 Delivery fee will apply</span>
           </div>
         </div>
-        <div className="menu">
-          {/* {MenuListSliced.map((category) => (
-              <div>
-                <div className="category-title font flex-row space-between">
-                  <h1>{category?.card?.card?.title}</h1>
-                  <div className="category-arrow">↓</div>
-                </div>
-                {console.log(category?.card?.card)}
-                <div>{checkSubCategories(category?.card?.card)}</div>
-              </div>
-            ))}
-           */}
+        <div>
           {MenuListSliced.map((category, index) => (
             <MenuCategory
               key={category?.card?.card?.title}

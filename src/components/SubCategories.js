@@ -8,11 +8,13 @@ const SubCategories = ({ category }) => {
   return (
     <div>
       <div
-        className="category-title font flex-row space-between"
+        className="w-1/2 m-auto font-bold p-[10px] border-b-[solid_1px_#d3d3d3] cursor-pointer text-[20px] font-['Quicksand',_sans-serif] flex flex-row justify-between border"
         onClick={handleClick}
       >
         <h1>{category?.title}</h1>
-        <div className="category-arrow">↓</div>
+        <div className="text-[14px] px-[7px] py-[5px] [transition:ease-in-out_0.1s]">
+          ↓
+        </div>
       </div>
       <div>{accordian && <MenucardList props={category?.itemCards} />}</div>
     </div>

@@ -12,12 +12,12 @@ const CartCard = ({ props }) => {
   };
 
   return (
-    <div className="cart-card">
-      <div className="font flex-row space-between">
+    <div className="w-2/5 m-[10px] px-[20px] py-[30px] border font-['Quicksand',_sans-serif]">
+      <div className="flex flex-row justify-between">
         <h3>{name}</h3>
-        <h5 className="fcolor">₹ {p / 100}</h5>
+        <h5 className="text-[#7E808C]">₹ {p / 100}</h5>
         <br />
-        <button className="cursor" onClick={handleClick}>
+        <button className="cursor-pointer" onClick={handleClick}>
           X
         </button>
       </div>

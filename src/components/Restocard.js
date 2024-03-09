@@ -9,16 +9,19 @@ const RestoCard = (props) => {
   };
 
   return (
-    <div className="resto-card">
-      <div className="resto-image" style={divStyle}></div>
-      <div className="resto-card-details">
-        <h2>{name}</h2>
+    <div className="w-[240px] ml-[0] mr-[40px] my-[20px] [transition:transform_ease-in_0.05s] hover:scale-[0.95]">
+      <div
+        className="h-[160px] w-[240px] rounded-[20px] mb-[5px]"
+        style={divStyle}
+      ></div>
+      <div className="ml-[10px] font-[Arial,_Helvetica,_sans-serif]">
+        <h2 className="text-ellipsis">{name}</h2>
         <h3>
           <span>★</span>
           {avgRating} • {sla?.slaString}
         </h3>
-        <p>{cuisines.join(", ")}</p>
-        <p>{locality}</p>
+        <p className="text-ellipsis">{cuisines.join(", ")}</p>
+        <p className="text-ellipsis">{locality}</p>
       </div>
     </div>
   );
@@ -28,7 +31,9 @@ export const RestoCardOpen = (RestoCard) => {
   return (props) => {
     return (
       <div>
-        <label className="closed-label">Closed</label>
+        <label className="bg-[rgb(224,_60,_60)] text-[white] text-[12px] absolute px-[7px] py-[3px] font-['Montserrat',_sans-serif]">
+          Closed
+        </label>
         <RestoCard {...props} />
       </div>
     );
