@@ -8,7 +8,7 @@ const useRestoFetch = (resId) => {
   }, []);
   async function fetchData() {
     const p = await fetch(
-      `https://corsproxy.org/?https%3A%2F%2Fwww.swiggy.com%2Fdapi%2Fmenu%2Fpl%3Fpage-type%3DREGULAR_MENU%26complete-menu%3Dtrue%26lat%3D23.022505%26lng%3D72.5713621%26restaurantId%3D${resId}`
+      `https://thingproxy.freeboard.io/fetch/https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=23.022505&lng=72.5713621&restaurantId=${resId}`
     );
     const data = await p.json();
     updateStateVariables(data);

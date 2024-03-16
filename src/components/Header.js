@@ -3,9 +3,14 @@ import { useState } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
+// https://www.swiggy.com/dapi/misc/place-autocomplete?input=mumbai   for location search
 const Header = () => {
   const [Signin, SetSignin] = useState("Sign in");
   const cartItems = useSelector((store) => store.cart.items);
+  const [InputValue, setInputValue] = useState("");
+  function handleEvent(e) {
+    setInputValue(e.target.value);
+  }
   console.log(cartItems);
   return (
     <div className="w-full h-[10vh] [box-shadow:0px_0px_100px_2px_#dfdede] px-[100px] py-[0] flex flex-row items-center">
@@ -25,9 +30,11 @@ const Header = () => {
       <input
         className="h-[30px] ml-5 mr-0 my-auto w-[400px] border border-[#dedcdc] pl-[10px]"
         type="text"
-        placeholder="Search Restaurants"
+        placeholder="Search Location"
+        value={InputValue}
+        onChange={handleEvent}
       />
-
+      <span>{InputValue}</span>
       <div className="mx-[0] my-[auto] ml-auto min-w-[600px]">
         <ul className="flex flex-row list-none mx-[0] my-[auto]">
           <li className="cursor-pointer m-auto flex justify-evenly items-center">
