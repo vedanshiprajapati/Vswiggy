@@ -8,10 +8,11 @@ const Header = () => {
   const [Signin, SetSignin] = useState("Sign in");
   const cartItems = useSelector((store) => store.cart.items);
   const [InputValue, setInputValue] = useState("");
+
   function handleEvent(e) {
     setInputValue(e.target.value);
   }
-  console.log(cartItems);
+  console.log("rand");
   return (
     <div className="w-full h-[10vh] [box-shadow:0px_0px_100px_2px_#dfdede] px-[100px] py-[0] flex flex-row items-center">
       <svg
