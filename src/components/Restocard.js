@@ -15,7 +15,7 @@ const RestoCard = (props) => {
         style={divStyle}
       ></div>
       <div className="ml-[10px] font-[Arial,_Helvetica,_sans-serif]">
-        <h2 className="text-ellipsis">{name}</h2>
+        <h2 className="text-ellipsis text-xl font-bold">{name}</h2>
         <h3>
           <span>★</span>
           {avgRating} • {sla?.slaString}

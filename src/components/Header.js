@@ -1,18 +1,16 @@
 import { HEADER_ICONS, SWIGGY_ICON_PATH } from "../utils/mockdata";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import SearchBar from "./SearchBar";
+import Search from "./Search";
 
 // https://www.swiggy.com/dapi/misc/place-autocomplete?input=mumbai   for location search
+// https://www.swiggy.com/dapi/misc/address-recommend?place_id=ChIJj-IhgwcYXDkRHFeJSS8pqdw  location geometry
 const Header = () => {
   const [Signin, SetSignin] = useState("Sign in");
   const cartItems = useSelector((store) => store.cart.items);
-  const [InputValue, setInputValue] = useState("");
 
-  function handleEvent(e) {
-    setInputValue(e.target.value);
-  }
-  console.log("rand");
   return (
     <div className="w-full h-[10vh] [box-shadow:0px_0px_100px_2px_#dfdede] px-[100px] py-[0] flex flex-row items-center">
       <svg
@@ -27,15 +25,9 @@ const Header = () => {
           <path d={SWIGGY_ICON_PATH} fill="#fc8019" />
         </Link>
       </svg>
+      <Search />
 
-      <input
-        className="h-[30px] ml-5 mr-0 my-auto w-[400px] border border-[#dedcdc] pl-[10px]"
-        type="text"
-        placeholder="Search Location"
-        value={InputValue}
-        onChange={handleEvent}
-      />
-      <span>{InputValue}</span>
+      {/* <SearchBar/> */}
       <div className="mx-[0] my-[auto] ml-auto min-w-[600px]">
         <ul className="flex flex-row list-none mx-[0] my-[auto]">
           <li className="cursor-pointer m-auto flex justify-evenly items-center">

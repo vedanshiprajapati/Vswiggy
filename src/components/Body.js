@@ -20,7 +20,7 @@ const Body = () => {
 
     const jsonData = await p.json();
 
-    console.log(jsonData);
+    // console.log(jsonData);
     let d = null;
 
     for (let i = 0; i < jsonData?.data?.cards.length; i++) {
