@@ -15,7 +15,7 @@ const Body = () => {
 
   async function fetchDATA() {
     const p = await fetch(
-      "https://thingproxy.freeboard.io/fetch/https://www.swiggy.com/dapi/restaurants/list/v5?lat=23.022505&lng=72.5713621&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+      `https://api.allorigins.win/get?url=${encodeURIComponent(`/https://www.swiggy.com/dapi/restaurants/list/v5?lat=23.022505&lng=72.5713621&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING`)}`
     );
 
     const jsonData = await p.json();
